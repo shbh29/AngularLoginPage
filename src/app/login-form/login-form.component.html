@@ -1,0 +1,14 @@
+<div class="container display-4">
+    <form #userForm="ngForm" (ngSubmit)="signUp(userForm)">
+      <input type="text" class="form-control" name="first" placeholder="Enter username" [(ngModel)]="userName" [ngModelOptions]="{updateOn: 'change'}" #userNameTemp="ngModel" required>
+      <div class="alert alert-warning" role="alert" *ngIf="!userNameTemp.pristine && userNameTemp.invalid">
+          A simple warning alert—check it out!
+        </div>
+      <input type="password" class="form-control" placeholder="Enter password">
+      <input type="password" class="form-control" placeholder="Re-enter password">
+      <button type="button" class="btn btn-primary">Submit</button>
+      <!-- <button type="button" class="btn btn-primary" (click)="signUp()">Submit</button> -->
+  </form>
+</div>
+{{userName}}
+<!-- [ngModelOptions]="{updateOn: 'change'}" -->
